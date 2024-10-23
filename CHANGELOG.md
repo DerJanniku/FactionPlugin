@@ -1,3 +1,4 @@
+
 # Change Log
 
 All notable changes to this project will be documented in this file.
@@ -7,6 +8,7 @@ All notable changes to this project will be documented in this file.
 ### Added
 - Basic player customization system.
 - Faction creation and management features.
+- Player Customization System classes: Warrior, Mage, Rogue, Archer.
 
 ### Changed
 - Updated faction traits for better balance.

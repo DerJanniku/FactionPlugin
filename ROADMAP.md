@@ -1,3 +1,4 @@
+
 # Project Roadmap
 
 This document outlines the roadmap for developing the Minecraft plugin with faction mechanics, player customization, war systems, and resource management. The project is broken down into phases, starting with essential features and moving toward advanced mechanics and optimizations.
@@ -98,68 +99,13 @@ Phase 3 introduces resource-based faction progression, armor upgrades, and incen
 **Objective:** Create a system for faction-wide progression and long-term gameplay incentives.  
 **Key Features:**
 - Factions level up based on performance in wars and resource collection.
-- Winning wars grants control over special resources or locations.
-- Temporary buffs for winning factions (e.g., resource gathering speed).
-
-**Mil You : Here is the rest of the roadmap:
-
-```markdown
-## Phase 4: Scalability and Optimization
-
-In Phase 4, we focus on optimizing the plugin for larger player bases and server performance. This phase is critical for ensuring smooth gameplay on larger servers.
-
-### 4.1. Server Performance Optimization
-**Objective:** Ensure the plugin runs efficiently on servers of varying sizes (small to large).  
-**Key Features:**
-- Optimize territory tracking, war mechanics, and resource contribution to reduce server lag.
-- Use server optimization techniques (e.g., Paper or Spigot).
+- Winning wars grants tangible rewards (e.g., control over key resources, temporary buffs).
 
 **Milestones:**
-- Test plugin performance under large player loads.
-- Minimize lag by optimizing the HUD, territory protection, and event triggers.
+- Implement a faction leveling system.
+- Define rewards for winning wars.
+- Create a visible progression system (e.g., faction levels, ranks).
 
-### 4.2. Scalability Adjustments for Small Servers
-**Objective:** Create simplified versions of the plugin for smaller servers to reduce complexity.  
-**Key Features:**
-- Streamline faction wars and resource mechanics for smaller groups.
-- Remove or adjust features like territory tracking for small-scale servers.
+## Recent Changes
 
-**Milestones:**
-- Build a modular plugin where certain features can be toggled on/off for smaller servers.
-- Create separate configuration files to adjust server load settings based on player count.
-
-## Phase 5: Future Expansions & Additional Features
-
-Once the core plugin is stable and optimized, we can plan for future content updates and additional mechanics to keep the gameplay engaging over time.
-
-### 5.1. Future Faction Expansions
-**Objective:** Add new factions and mechanics to keep the server fresh and exciting.  
-**Key Features:**
-- New factions with distinct traits (e.g., technology-based faction).
-- New war modes (e.g., alliances, siege warfare).
-
-**Milestones:**
-- Introduce at least 1-2 new factions with unique gameplay mechanics.
-- Implement additional war objectives, such as capturing key structures or defending fortifications.
-
-### 5.2. Periodic Events & Challenges
-**Objective:** Create periodic server events or challenges to engage players.  
-**Key Features:**
-- Weekly or monthly faction challenges (e.g., resource collection contests, PvP tournaments).
-- Special rewards for top-performing factions.
-
-**Milestones:**
-- Design and implement at least one server-wide challenge per month.
-- Develop reward systems for faction or individual performance.
-
-## Development Timeline
-
-The roadmap is estimated to be completed in the following timeline:
-
-- Phase 1: 4-6 weeks
-- Phase 2: 6-8 weeks
-- Phase 3: 4-6 weeks
-- Phase 4: Ongoing throughout development
-- Phase 5: Post-launch expansions
-
-This roadmap provides a clear, step-by-step plan to bring the Minecraft plugin to life. Each phase will focus on delivering specific features, allowing us to prioritize core gameplay before expanding into more complex systems.
+- Added Player Customization System classes: Warrior, Mage, Rogue, Archer.

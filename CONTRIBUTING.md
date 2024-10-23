@@ -1,3 +1,4 @@
+
 # Contributing to FactionPlugin
 
 Thank you for considering contributing to FactionPlugin! Here’s how you can help:
@@ -39,5 +40,9 @@ Thank you for considering contributing to FactionPlugin! Here’s how you can he
 - Follow the existing code style and conventions.
 - Write clear commit messages.
 - Test your changes before submitting a pull request.
+
+## Recent Changes
+
+- Added Player Customization System classes: Warrior, Mage, Rogue, Archer.
 
 Thank you for your contributions!
