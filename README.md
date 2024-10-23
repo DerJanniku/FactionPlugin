@@ -1,3 +1,4 @@
+
 # FactionPlugin
 
 FactionPlugin is a Minecraft plugin that introduces faction mechanics, player customization, war systems, and resource management. Players can create or join factions, engage in wars, and contribute resources to upgrade their faction's capabilities.
@@ -8,6 +9,15 @@ FactionPlugin is a Minecraft plugin that introduces faction mechanics, player cu
 - **Faction System:** Join one of three factions (Avalon, Thalassia, Norwind) with distinct traits and benefits.
 - **War Mechanics:** Declare wars between factions with dynamic territory protection and victory conditions.
 - **Resource Management:** Contribute resources to upgrade faction-wide armor and bonuses.
+
+## Player Customization System
+
+### Classes
+
+- **Warrior:** High health, access to melee buffs like strength potions.
+- **Mage:** Ability to use magic items (enchanted books, firework rockets for ranged attacks).
+- **Rogue:** Faster movement, better stealth, and sneak attack bonuses.
+- **Archer:** Bonuses to ranged weapons like bows and crossbows.
 
 ## Installation
 
