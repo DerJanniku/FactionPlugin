@@ -17,6 +17,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.UUID;
+import org.bukkit.command.Command;
+import java.util.List;
+import java.util.ArrayList;
 import java.util.logging.Level;
 import com.derjanniku.factionplugin.customization.PlayerCustomization;
 import org.derjannik.FactionPlugin.faction.FactionManager;
@@ -29,7 +32,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColor.GREEN));
+getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColor.GREEN).toString());
 
         // Initialize PlayerCustomization
         playerCustomization = new PlayerCustomization(this);
@@ -151,7 +154,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
                 playerProfiles.put(playerUUID, profile);
             }
         }
-        getLogger().info(Component.text("Loaded " + playerProfiles.size() + " player profiles.", NamedTextColor.AQUA));
+getLogger().info(Component.text("Loaded " + playerProfiles.size() + " player profiles.", NamedTextColor.AQUA).toString());
     }
 
     // Save player profiles to YAML configuration files
@@ -176,16 +179,12 @@ public class FactionPlugin extends JavaPlugin implements Listener {
                 getLogger().log(Level.SEVERE, "Failed to save profile for player " + playerUUID, e);
             }
         }
-        getLogger().info(Component.text("Player profiles saved.", NamedTextColor.AQUA));
+getLogger().info(Component.text("Player profiles saved.", NamedTextColor.AQUA).toString());
     }
 
     // Handles player join event
     @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
-        UUID uuid = player.getUniqueId();
 
-        // Check if the player has a profile, if not, create one
         if (!playerProfiles.containsKey(uuid)) {
             PlayerProfile profile = new PlayerProfile(uuid);
             profile.setPlayerClass("Warrior"); // Default class
