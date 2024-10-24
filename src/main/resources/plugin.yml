@@ -3,3 +3,8 @@ name: FactionPlugin
 version: 1.0
 main: org.derjannik.FactionPlugin.FactionPlugin
 api-version: 1.21
+
+commands:
+  chooseclass:
+    description: Choose your player class
+    usage: /<command> <classname>
