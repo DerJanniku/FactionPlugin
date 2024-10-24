@@ -39,6 +39,10 @@ FactionPlugin is a Minecraft plugin that introduces faction mechanics, player cu
 
 ## Usage
 
+### Faction Selection
+- Players can open the faction selection GUI using the `/selectfaction` command.
+- Use the GUI to select your faction (Avalon, Thalassia, Norwind).
+
 ### Class and Cosmetic Selection
 - When players first join the server, they will be prompted to choose a class.
 - Players can choose their class using the `/chooseclass` command.

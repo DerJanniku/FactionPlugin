@@ -42,6 +42,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
 
         // Register event listeners
         Bukkit.getPluginManager().registerEvents(this, this);
+        new FactionSelectionGUI(this);
         new PlayerCustomizationGUI(this);
 
         // Load player profiles from configuration
