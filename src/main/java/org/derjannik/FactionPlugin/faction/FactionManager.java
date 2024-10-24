@@ -2,6 +2,7 @@
 package org.derjannik.FactionPlugin.faction;
 
 import org.bukkit.entity.Player;
+import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
 import java.io.File;
@@ -149,7 +150,11 @@ public class FactionManager {
             members.remove(playerUUID);
         }
 
-        public boolean isMember(UUID playerUUID) {
+public boolean hasMember(UUID playerUUID) {
+    return members.containsKey(playerUUID);
+}
+
+public boolean isMember(UUID playerUUID) {
             return members.containsKey(playerUUID);
         }
 

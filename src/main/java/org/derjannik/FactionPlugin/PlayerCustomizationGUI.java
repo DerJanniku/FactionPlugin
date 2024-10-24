@@ -10,6 +10,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import java.util.UUID;
+import com.derjanniku.factionplugin.customization.PlayerProfile;
 
 import java.util.Arrays;
 
@@ -58,7 +59,7 @@ public class PlayerCustomizationGUI implements Listener {
         if (clickedItem == null || !clickedItem.hasItemMeta()) return;
 
         String itemName = clickedItem.getItemMeta().getDisplayName();
-        PlayerProfile profile = plugin.getPlayerProfile(player.getUniqueId());
+PlayerProfile profile = plugin.getPlayerProfile(player.getUniqueId());
 
         UUID playerUUID = player.getUniqueId();
         switch (itemName) {
@@ -76,23 +77,6 @@ public class PlayerCustomizationGUI implements Listener {
                     player.sendMessage(itemName + " removed.");
                 } else {
                     cosmeticCustomization.setCosmetic(playerUUID, itemName);
-                    player.sendMessage(itemName + " added.");
-                }
-                break;
-            case "Warrior":
-            case "Mage":
-            case "Archer":
-            case "Rogue":
-                profile.setPlayerClass(itemName);
-                player.sendMessage("Class set to " + itemName);
-                break;
-            case "Hat":
-            case "Cape":
-                if (profile.getCosmetics().contains(itemName)) {
-                    profile.removeCosmetic(itemName);
-                    player.sendMessage(itemName + " removed.");
-                } else {
-                    profile.addCosmetic(itemName);
                     player.sendMessage(itemName + " added.");
                 }
                 break;

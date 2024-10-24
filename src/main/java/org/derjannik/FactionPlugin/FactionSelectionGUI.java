@@ -4,6 +4,7 @@ package org.derjannik.FactionPlugin;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
+import org.derjannik.FactionPlugin.faction.FactionManager;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
@@ -49,7 +50,7 @@ public class FactionSelectionGUI implements Listener {
         if (clickedItem == null || !clickedItem.hasItemMeta()) return;
 
         String itemName = clickedItem.getItemMeta().getDisplayName();
-        FactionManager factionManager = plugin.getFactionManager();
+FactionManager factionManager = plugin.getFactionManager();
 
         switch (itemName) {
             case "Avalon":

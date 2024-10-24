@@ -18,6 +18,9 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.UUID;
 import org.bukkit.command.Command;
+import org.bukkit.command.CommandSender;
+import org.bukkit.potion.PotionEffectType;
+import org.bukkit.potion.PotionEffect;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.logging.Level;
@@ -32,7 +35,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-        getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColor.GREEN).toString());
+getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColor.GREEN).toString());
 
         // Initialize PlayerCustomization
         playerCustomization = new PlayerCustomization(this);
@@ -49,13 +52,21 @@ public class FactionPlugin extends JavaPlugin implements Listener {
         loadPlayerProfiles();
     }
 
-    private void applyClassPerks(Player player) {
+public FactionManager getFactionManager() {
+    return factionManager;
+}
+
+public PlayerProfile getPlayerProfile(UUID playerUUID) {
+    return playerProfiles.get(playerUUID);
+}
+
+private void applyClassPerks(Player player) {
         PlayerProfile profile = getPlayerProfile(player.getUniqueId());
         String playerClass = profile.getPlayerClass();
 
         switch (playerClass.toLowerCase()) {
             case "warrior":
-                player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1));
+player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1));
                 break;
             case "mage":
                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, Integer.MAX_VALUE, 1));
@@ -69,18 +80,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
         }
     }
 
-    @EventHandler
-    public void onPlayerJoin(PlayerJoinEvent event) {
-        Player player = event.getPlayer();
-        if (!playerCustomization.getPlayerClass(player).equals("None")) {
-            // Player has already chosen a class
-            player.sendMessage(Component.text("Welcome back, " + player.getName() + "! Your class is: " + playerCustomization.getPlayerClass(player), NamedTextColor.GOLD));
-            applyClassPerks(player);
-        } else {
-            // New player, prompt to choose a class
-            player.sendMessage(Component.text("Welcome, " + player.getName() + "! Please choose your class using /chooseclass <classname>", NamedTextColor.GOLD));
-        }
-    }
+
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
