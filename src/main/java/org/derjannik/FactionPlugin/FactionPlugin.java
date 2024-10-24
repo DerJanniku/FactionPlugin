@@ -71,6 +71,10 @@ getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColo
         switch (command.getName().toLowerCase()) {
             case "chooseclass":
                 return handleChooseClassCommand(player, args);
+            case "setcosmetic":
+                return handleSetCosmeticCommand(player, args);
+            case "getcosmetic":
+                return handleGetCosmeticCommand(player, args);
             case "joinfaction":
                 return handleJoinFactionCommand(player, args);
             case "leavefaction":
@@ -96,6 +100,33 @@ getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColo
 
         playerCustomization.setPlayerClass(player, className);
         player.sendMessage(Component.text("You have chosen the " + className + " class!", NamedTextColor.GREEN));
+        return true;
+    }
+
+    private boolean handleSetCosmeticCommand(Player player, String[] args) {
+        if (args.length != 2) {
+            player.sendMessage(Component.text("Usage: /setcosmetic <type> <item>", NamedTextColor.RED));
+            return true;
+        }
+
+        String cosmeticType = args[0].toLowerCase();
+        String cosmeticItem = args[1].toLowerCase();
+
+        playerCustomization.setPlayerCosmetic(player, cosmeticType, cosmeticItem);
+        player.sendMessage(Component.text("You have set your " + cosmeticType + " to " + cosmeticItem + "!", NamedTextColor.GREEN));
+        return true;
+    }
+
+    private boolean handleGetCosmeticCommand(Player player, String[] args) {
+        if (args.length != 1) {
+            player.sendMessage(Component.text("Usage: /getcosmetic <type>", NamedTextColor.RED));
+            return true;
+        }
+
+        String cosmeticType = args[0].toLowerCase();
+        String cosmeticItem = playerCustomization.getPlayerCosmetic(player, cosmeticType);
+
+        player.sendMessage(Component.text("Your " + cosmeticType + " is " + cosmeticItem + ".", NamedTextColor.GREEN));
         return true;
     }
 

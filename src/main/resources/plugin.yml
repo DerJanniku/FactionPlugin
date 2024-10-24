@@ -14,6 +14,12 @@ commands:
   leavefaction:
     description: Leave your current faction
     usage: /<command>
+  setcosmetic:
+    description: Set a cosmetic item
+    usage: /<command> <type> <item>
+  getcosmetic:
+    description: Get your current cosmetic item
+    usage: /<command> <type>
   factioninfo:
     description: Get information about your current faction
     usage: /<command>
