@@ -32,7 +32,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
 
     @Override
     public void onEnable() {
-getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColor.GREEN).toString());
+        getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColor.GREEN).toString());
 
         // Initialize PlayerCustomization
         playerCustomization = new PlayerCustomization(this);
@@ -42,6 +42,7 @@ getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColo
 
         // Register event listeners
         Bukkit.getPluginManager().registerEvents(this, this);
+        new PlayerCustomizationGUI(this);
 
         // Load player profiles from configuration
         loadPlayerProfiles();
@@ -215,6 +216,9 @@ getLogger().info(Component.text("Player profiles saved.", NamedTextColor.AQUA).t
 
     // Handles player join event
     @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        UUID uuid = player.getUniqueId();
 
         if (!playerProfiles.containsKey(uuid)) {
             PlayerProfile profile = new PlayerProfile(uuid);
@@ -239,6 +243,16 @@ getLogger().info(Component.text("Player profiles saved.", NamedTextColor.AQUA).t
             this.uuid = uuid;
             this.playerClass = "Warrior"; // Default class
             this.cosmetics = new ArrayList<>();
+        }
+
+        public void addCosmetic(String cosmetic) {
+            if (!cosmetics.contains(cosmetic)) {
+                cosmetics.add(cosmetic);
+            }
+        }
+
+        public void removeCosmetic(String cosmetic) {
+            cosmetics.remove(cosmetic);
         }
 
         public UUID getUuid() {

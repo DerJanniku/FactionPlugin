@@ -39,6 +39,12 @@ FactionPlugin is a Minecraft plugin that introduces faction mechanics, player cu
 
 ## Usage
 
+### Class and Cosmetic Selection
+- When players first join the server, they will be prompted to choose a class.
+- Players can choose their class using the `/chooseclass` command.
+- Players can open the class and cosmetic selection GUI using the `/customize` command.
+- Use the GUI to select your class and cosmetics (hats, capes).
+
 - When players first join the server, they will be prompted to choose a class.
 - Players can choose their class using the `/chooseclass` command.
 - Engage in wars and manage resources through faction interactions.
