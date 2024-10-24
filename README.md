@@ -39,6 +39,12 @@ FactionPlugin is a Minecraft plugin that introduces faction mechanics, player cu
 
 ## Usage
 
+### Material Restrictions
+- Each faction can build with specific materials:
+  - **Avalon**: Diamond Block, Emerald Block
+  - **Thalassia**: Water Bucket, Prismarine
+  - **Norwind**: Iron Block, Anvil
+
 ### Faction Selection
 - Players can open the faction selection GUI using the `/selectfaction` command.
 - Use the GUI to select your faction (Avalon, Thalassia, Norwind).

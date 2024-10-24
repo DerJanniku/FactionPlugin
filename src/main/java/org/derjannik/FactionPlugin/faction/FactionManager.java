@@ -99,11 +99,27 @@ public class FactionManager {
 
     public Faction getPlayerFaction(Player player) {
         for (Faction faction : factions.values()) {
-            if (faction.isMember(player.getUniqueId())) {
+            if (faction.hasMember(player.getUniqueId())) {
                 return faction;
             }
         }
         return null;
+    }
+
+    public boolean canBuildWithMaterial(Player player, Material material) {
+        Faction faction = getPlayerFaction(player);
+        if (faction == null) return false;
+
+        switch (faction.getName()) {
+            case "Avalon":
+                return material == Material.DIAMOND_BLOCK || material == Material.EMERALD_BLOCK;
+            case "Thalassia":
+                return material == Material.WATER_BUCKET || material == Material.PRISMARINE;
+            case "Norwind":
+                return material == Material.IRON_BLOCK || material == Material.ANVIL;
+            default:
+                return false;
+        }
     }
 
     private static class Faction {
