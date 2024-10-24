@@ -30,21 +30,30 @@ import org.derjannik.FactionPlugin.faction.FactionManager;
 public class FactionPlugin extends JavaPlugin implements Listener {
     private CosmeticCustomization cosmeticCustomization;
 
-    @Override
-    public void onEnable() {
-        cosmeticCustomization = new CosmeticCustomization();
+
+
+    public void setHat(UUID playerUUID, String hat) {
+        cosmeticCustomization.setHat(playerUUID, hat);
     }
 
-    public void setCosmetic(UUID playerUUID, String cosmetic) {
-        cosmeticCustomization.setCosmetic(playerUUID, cosmetic);
+    public String getHat(UUID playerUUID) {
+        return cosmeticCustomization.getHat(playerUUID);
     }
 
-    public String getCosmetic(UUID playerUUID) {
-        return cosmeticCustomization.getCosmetic(playerUUID);
+    public void removeHat(UUID playerUUID) {
+        cosmeticCustomization.removeHat(playerUUID);
     }
 
-    public void removeCosmetic(UUID playerUUID) {
-        cosmeticCustomization.removeCosmetic(playerUUID);
+    public void setCape(UUID playerUUID, String cape) {
+        cosmeticCustomization.setCape(playerUUID, cape);
+    }
+
+    public String getCape(UUID playerUUID) {
+        return cosmeticCustomization.getCape(playerUUID);
+    }
+
+    public void removeCape(UUID playerUUID) {
+        cosmeticCustomization.removeCape(playerUUID);
     }
     // Stores player profiles by UUID, loaded from configuration
     private HashMap<UUID, PlayerProfile> playerProfiles = new HashMap<>();

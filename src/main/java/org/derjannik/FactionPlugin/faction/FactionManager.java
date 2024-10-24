@@ -5,11 +5,16 @@ import org.bukkit.entity.Player;
 import org.bukkit.Material;
 import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.UUID;
+import java.util.List;
+import java.util.ArrayList;
+import java.util.Comparator;
 
 public class FactionManager {
     private final JavaPlugin plugin;
@@ -195,6 +200,22 @@ public boolean isMember(UUID playerUUID) {
 
         public int getMemberCount() {
             return members.size();
+        }
+
+        public void addPoints(UUID playerUUID, int points) {
+            members.put(playerUUID, members.getOrDefault(playerUUID, 0) + points);
+        }
+
+        public int getPoints(UUID playerUUID) {
+            return members.getOrDefault(playerUUID, 0);
+        }
+
+        public void setLeader(UUID playerUUID) {
+            // Implementation for setting the leader
+        }
+
+        public List<UUID> getMembers() {
+            return new ArrayList<>(members.keySet());
         }
     }
 }
