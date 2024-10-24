@@ -15,6 +15,15 @@ public class Warrior {
         System.out.println("Strength potion used!");
     }
 
+    public void boostHealth(int amount) {
+        this.health += amount;
+        System.out.println("Health boosted by " + amount + "!");
+    }
+
+    public void boostDamage() {
+        System.out.println("Damage boosted!");
+    }
+
     public int getHealth() {
         return health;
     }

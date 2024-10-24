@@ -69,10 +69,25 @@ public class FactionManager {
                 return;
             }
             faction.addMember(player.getUniqueId());
+            applyFactionTrait(player, faction.getTrait());
             saveFaction(faction);
             player.sendMessage("You have joined the " + factionName + " faction!");
         } else {
             player.sendMessage("Faction not found!");
+        }
+    }
+
+    private void applyFactionTrait(Player player, String trait) {
+        switch (trait) {
+            case "magic":
+                player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1));
+                break;
+            case "water":
+                player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, Integer.MAX_VALUE, 1));
+                break;
+            case "combat":
+                player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
+                break;
         }
     }
 
@@ -84,6 +99,26 @@ public class FactionManager {
             player.sendMessage("You have left the " + faction.getName() + " faction.");
         } else {
             player.sendMessage("You are not in a faction.");
+        }
+    }
+
+    public void calculatePoints(Player player, int points) {
+        Faction faction = getPlayerFaction(player);
+        if (faction != null) {
+            faction.addPoints(player.getUniqueId(), points);
+            saveFaction(faction);
+        }
+    }
+
+    public void selectLeader() {
+        for (Faction faction : factions.values()) {
+            UUID leader = faction.getMembers().stream()
+                .max(Comparator.comparingInt(faction::getPoints))
+                .orElse(null);
+            if (leader != null) {
+                faction.setLeader(leader);
+                saveFaction(faction);
+            }
         }
     }
 

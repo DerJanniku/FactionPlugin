@@ -18,6 +18,14 @@ public class Mage {
         }
     }
 
+    public void boostMana(int amount) {
+        System.out.println("Mana boosted by " + amount + "!");
+    }
+
+    public void castSpell(String spell) {
+        System.out.println("Casting spell: " + spell);
+    }
+
     public List<String> getMagicItems() {
         return magicItems;
     }

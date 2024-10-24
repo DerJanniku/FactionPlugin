@@ -12,6 +12,14 @@ public class Archer {
         System.out.println("Ranged weapon used with bonus: " + rangedWeaponBonus);
     }
 
+    public void boostAccuracy(int amount) {
+        System.out.println("Accuracy boosted by " + amount + "!");
+    }
+
+    public void enableRapidFire() {
+        System.out.println("Rapid fire enabled!");
+    }
+
     public int getRangedWeaponBonus() {
         return rangedWeaponBonus;
     }

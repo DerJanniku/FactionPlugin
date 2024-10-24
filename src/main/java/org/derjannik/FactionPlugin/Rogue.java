@@ -15,6 +15,15 @@ public class Rogue {
         System.out.println("Sneak attack executed!");
     }
 
+    public void boostSpeed(int amount) {
+        this.speed += amount;
+        System.out.println("Speed boosted by " + amount + "!");
+    }
+
+    public void enableInvisibility() {
+        System.out.println("Invisibility enabled!");
+    }
+
     public int getSpeed() {
         return speed;
     }

@@ -50,10 +50,22 @@ FactionPlugin is a Minecraft plugin that introduces faction mechanics, player cu
 - Use the GUI to select your faction (Avalon, Thalassia, Norwind).
 
 ### Class and Cosmetic Selection
-- When players first join the server, they will be prompted to choose a class.
-- Players can choose their class using the `/chooseclass` command.
-- Players can open the class and cosmetic selection GUI using the `/customize` command.
-- Use the GUI to select your class and cosmetics (hats, capes, golden hats, diamond capes).
+When players first join the server, they will be prompted to choose a class.
+Players can choose their class using the `/chooseclass` command.
+Players can open the class and cosmetic selection GUI using the `/customize` command.
+Use the GUI to select your class and cosmetics (hats, capes, golden hats, diamond capes).
+
+### Class-Specific Perks and Abilities
+- **Warrior:** Can boost health and damage.
+- **Mage:** Can boost mana and cast spells.
+- **Rogue:** Can boost speed and enable invisibility.
+- **Archer:** Can boost accuracy and enable rapid fire.
+
+### Faction Traits and Leader Selection
+- **Avalon:** Magic trait with increased damage.
+- **Thalassia:** Water trait with water breathing.
+- **Norwind:** Combat trait with increased speed.
+- Faction leaders are selected based on points.
 
 - When players first join the server, they will be prompted to choose a class.
 - Players can choose their class using the `/chooseclass` command.

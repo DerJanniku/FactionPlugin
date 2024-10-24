@@ -73,12 +73,20 @@ PlayerProfile profile = plugin.getPlayerProfile(player.getUniqueId());
                 player.sendMessage("Class set to " + itemName);
                 break;
             case "Hat":
-            case "Cape":
-                if (cosmeticCustomization.getCosmetic(playerUUID) != null && cosmeticCustomization.getCosmetic(playerUUID).equals(itemName)) {
-                    cosmeticCustomization.removeCosmetic(playerUUID);
+                if (cosmeticCustomization.getHat(playerUUID) != null && cosmeticCustomization.getHat(playerUUID).equals(itemName)) {
+                    cosmeticCustomization.removeHat(playerUUID);
                     player.sendMessage(itemName + " removed.");
                 } else {
-                    cosmeticCustomization.setCosmetic(playerUUID, itemName);
+                    cosmeticCustomization.setHat(playerUUID, itemName);
+                    player.sendMessage(itemName + " added.");
+                }
+                break;
+            case "Cape":
+                if (cosmeticCustomization.getCape(playerUUID) != null && cosmeticCustomization.getCape(playerUUID).equals(itemName)) {
+                    cosmeticCustomization.removeCape(playerUUID);
+                    player.sendMessage(itemName + " removed.");
+                } else {
+                    cosmeticCustomization.setCape(playerUUID, itemName);
                     player.sendMessage(itemName + " added.");
                 }
                 break;
