@@ -8,3 +8,12 @@ commands:
   chooseclass:
     description: Choose your player class
     usage: /<command> <classname>
+  joinfaction:
+    description: Join a faction
+    usage: /<command> <factionname>
+  leavefaction:
+    description: Leave your current faction
+    usage: /<command>
+  factioninfo:
+    description: Get information about your current faction
+    usage: /<command>

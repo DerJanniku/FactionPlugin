@@ -19,11 +19,13 @@ import java.util.HashMap;
 import java.util.UUID;
 import java.util.logging.Level;
 import com.derjanniku.factionplugin.customization.PlayerCustomization;
+import org.derjannik.FactionPlugin.faction.FactionManager;
 
 public class FactionPlugin extends JavaPlugin implements Listener {
     // Stores player profiles by UUID, loaded from configuration
     private HashMap<UUID, PlayerProfile> playerProfiles = new HashMap<>();
     private PlayerCustomization playerCustomization;
+    private FactionManager factionManager;
 
     @Override
     public void onEnable() {
@@ -32,11 +34,11 @@ public class FactionPlugin extends JavaPlugin implements Listener {
         // Initialize PlayerCustomization
         playerCustomization = new PlayerCustomization(this);
 
+        // Initialize FactionManager
+        factionManager = new FactionManager(this);
+
         // Register event listeners
         Bukkit.getPluginManager().registerEvents(this, this);
-
-        // Initialize factions (for demonstration)
-        initializeFactions();
 
         // Load player profiles from configuration
         loadPlayerProfiles();
@@ -56,29 +58,63 @@ public class FactionPlugin extends JavaPlugin implements Listener {
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-        if (command.getName().equalsIgnoreCase("chooseclass")) {
-            if (!(sender instanceof Player)) {
-                sender.sendMessage(Component.text("This command can only be used by players.", NamedTextColor.RED));
-                return true;
-            }
-
-            Player player = (Player) sender;
-            if (args.length != 1) {
-                player.sendMessage(Component.text("Usage: /chooseclass <classname>", NamedTextColor.RED));
-                return true;
-            }
-
-            String className = args[0].toLowerCase();
-            if (!className.equals("warrior") && !className.equals("mage") && !className.equals("rogue") && !className.equals("archer")) {
-                player.sendMessage(Component.text("Invalid class. Choose from: warrior, mage, rogue, archer", NamedTextColor.RED));
-                return true;
-            }
-
-            playerCustomization.setPlayerClass(player, className);
-            player.sendMessage(Component.text("You have chosen the " + className + " class!", NamedTextColor.GREEN));
+        if (!(sender instanceof Player)) {
+            sender.sendMessage(Component.text("This command can only be used by players.", NamedTextColor.RED));
             return true;
         }
-        return false;
+
+        Player player = (Player) sender;
+
+        switch (command.getName().toLowerCase()) {
+            case "chooseclass":
+                return handleChooseClassCommand(player, args);
+            case "joinfaction":
+                return handleJoinFactionCommand(player, args);
+            case "leavefaction":
+                return handleLeaveFactionCommand(player);
+            case "factioninfo":
+                return handleFactionInfoCommand(player);
+            default:
+                return false;
+        }
+    }
+
+    private boolean handleChooseClassCommand(Player player, String[] args) {
+        if (args.length != 1) {
+            player.sendMessage(Component.text("Usage: /chooseclass <classname>", NamedTextColor.RED));
+            return true;
+        }
+
+        String className = args[0].toLowerCase();
+        if (!className.equals("warrior") && !className.equals("mage") && !className.equals("rogue") && !className.equals("archer")) {
+            player.sendMessage(Component.text("Invalid class. Choose from: warrior, mage, rogue, archer", NamedTextColor.RED));
+            return true;
+        }
+
+        playerCustomization.setPlayerClass(player, className);
+        player.sendMessage(Component.text("You have chosen the " + className + " class!", NamedTextColor.GREEN));
+        return true;
+    }
+
+    private boolean handleJoinFactionCommand(Player player, String[] args) {
+        if (args.length != 1) {
+            player.sendMessage(Component.text("Usage: /joinfaction <factionname>", NamedTextColor.RED));
+            return true;
+        }
+
+        String factionName = args[0];
+        factionManager.joinFaction(player, factionName);
+        return true;
+    }
+
+    private boolean handleLeaveFactionCommand(Player player) {
+        factionManager.leaveFaction(player);
+        return true;
+    }
+
+    private boolean handleFactionInfoCommand(Player player) {
+        factionManager.getFactionInfo(player);
+        return true;
     }
 
     @Override

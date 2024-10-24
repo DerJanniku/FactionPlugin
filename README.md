@@ -46,13 +46,19 @@ FactionPlugin is a Minecraft plugin that introduces faction mechanics, player cu
 ## Commands
 
 - `/chooseclass <classname>`: Choose your player class. Available classes are warrior, mage, rogue, and archer.
+- `/joinfaction <factionname>`: Join a faction. Available factions are Avalon, Thalassia, and Norwind.
+- `/leavefaction`: Leave your current faction.
+- `/factioninfo`: Get information about your current faction.
 
 ## Getting Started
 
 1. Join the server for the first time.
 2. You will be prompted to choose a class.
 3. Use the command `/chooseclass <classname>` to select your desired class.
-4. Once you've chosen a class, you can start interacting with the faction system and exploring the plugin's features.
+4. Join a faction using `/joinfaction <factionname>`.
+5. Use `/factioninfo` to see details about your faction.
+6. Interact with other players and contribute to your faction's growth.
+7. If you want to change factions, use `/leavefaction` before joining a new one.
 
 ## Contributing
 
