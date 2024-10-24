@@ -49,12 +49,33 @@ public class FactionPlugin extends JavaPlugin implements Listener {
         loadPlayerProfiles();
     }
 
+    private void applyClassPerks(Player player) {
+        PlayerProfile profile = getPlayerProfile(player.getUniqueId());
+        String playerClass = profile.getPlayerClass();
+
+        switch (playerClass.toLowerCase()) {
+            case "warrior":
+                player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1));
+                break;
+            case "mage":
+                player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, Integer.MAX_VALUE, 1));
+                break;
+            case "rogue":
+                player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
+                break;
+            case "archer":
+                player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 1));
+                break;
+        }
+    }
+
     @EventHandler
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player player = event.getPlayer();
         if (!playerCustomization.getPlayerClass(player).equals("None")) {
             // Player has already chosen a class
             player.sendMessage(Component.text("Welcome back, " + player.getName() + "! Your class is: " + playerCustomization.getPlayerClass(player), NamedTextColor.GOLD));
+            applyClassPerks(player);
         } else {
             // New player, prompt to choose a class
             player.sendMessage(Component.text("Welcome, " + player.getName() + "! Please choose your class using /chooseclass <classname>", NamedTextColor.GOLD));
@@ -102,6 +123,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
 
         playerCustomization.setPlayerClass(player, className);
         player.sendMessage(Component.text("You have chosen the " + className + " class!", NamedTextColor.GREEN));
+        applyClassPerks(player);
         return true;
     }
 

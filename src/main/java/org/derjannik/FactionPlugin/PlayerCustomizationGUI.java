@@ -9,10 +9,12 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+import java.util.UUID;
 
 import java.util.Arrays;
 
 public class PlayerCustomizationGUI implements Listener {
+    private final CosmeticCustomization cosmeticCustomization = new CosmeticCustomization();
 
     private final FactionPlugin plugin;
 
@@ -58,7 +60,25 @@ public class PlayerCustomizationGUI implements Listener {
         String itemName = clickedItem.getItemMeta().getDisplayName();
         PlayerProfile profile = plugin.getPlayerProfile(player.getUniqueId());
 
+        UUID playerUUID = player.getUniqueId();
         switch (itemName) {
+            case "Warrior":
+            case "Mage":
+            case "Archer":
+            case "Rogue":
+                profile.setPlayerClass(itemName);
+                player.sendMessage("Class set to " + itemName);
+                break;
+            case "Hat":
+            case "Cape":
+                if (cosmeticCustomization.getCosmetic(playerUUID) != null && cosmeticCustomization.getCosmetic(playerUUID).equals(itemName)) {
+                    cosmeticCustomization.removeCosmetic(playerUUID);
+                    player.sendMessage(itemName + " removed.");
+                } else {
+                    cosmeticCustomization.setCosmetic(playerUUID, itemName);
+                    player.sendMessage(itemName + " added.");
+                }
+                break;
             case "Warrior":
             case "Mage":
             case "Archer":
