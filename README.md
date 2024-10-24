@@ -39,8 +39,20 @@ FactionPlugin is a Minecraft plugin that introduces faction mechanics, player cu
 
 ## Usage
 
-- Players can create or join factions using commands (to be defined).
+- When players first join the server, they will be prompted to choose a class.
+- Players can choose their class using the `/chooseclass` command.
 - Engage in wars and manage resources through faction interactions.
+
+## Commands
+
+- `/chooseclass <classname>`: Choose your player class. Available classes are warrior, mage, rogue, and archer.
+
+## Getting Started
+
+1. Join the server for the first time.
+2. You will be prompted to choose a class.
+3. Use the command `/chooseclass <classname>` to select your desired class.
+4. Once you've chosen a class, you can start interacting with the faction system and exploring the plugin's features.
 
 ## Contributing
 

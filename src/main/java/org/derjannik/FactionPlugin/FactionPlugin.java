@@ -18,14 +18,19 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.UUID;
 import java.util.logging.Level;
+import com.derjanniku.factionplugin.customization.PlayerCustomization;
 
 public class FactionPlugin extends JavaPlugin implements Listener {
     // Stores player profiles by UUID, loaded from configuration
     private HashMap<UUID, PlayerProfile> playerProfiles = new HashMap<>();
+    private PlayerCustomization playerCustomization;
 
     @Override
     public void onEnable() {
         getLogger().info(Component.text("FactionPlugin is being enabled!", NamedTextColor.GREEN));
+
+        // Initialize PlayerCustomization
+        playerCustomization = new PlayerCustomization(this);
 
         // Register event listeners
         Bukkit.getPluginManager().registerEvents(this, this);
@@ -35,6 +40,45 @@ public class FactionPlugin extends JavaPlugin implements Listener {
 
         // Load player profiles from configuration
         loadPlayerProfiles();
+    }
+
+    @EventHandler
+    public void onPlayerJoin(PlayerJoinEvent event) {
+        Player player = event.getPlayer();
+        if (!playerCustomization.getPlayerClass(player).equals("None")) {
+            // Player has already chosen a class
+            player.sendMessage(Component.text("Welcome back, " + player.getName() + "! Your class is: " + playerCustomization.getPlayerClass(player), NamedTextColor.GOLD));
+        } else {
+            // New player, prompt to choose a class
+            player.sendMessage(Component.text("Welcome, " + player.getName() + "! Please choose your class using /chooseclass <classname>", NamedTextColor.GOLD));
+        }
+    }
+
+    @Override
+    public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
+        if (command.getName().equalsIgnoreCase("chooseclass")) {
+            if (!(sender instanceof Player)) {
+                sender.sendMessage(Component.text("This command can only be used by players.", NamedTextColor.RED));
+                return true;
+            }
+
+            Player player = (Player) sender;
+            if (args.length != 1) {
+                player.sendMessage(Component.text("Usage: /chooseclass <classname>", NamedTextColor.RED));
+                return true;
+            }
+
+            String className = args[0].toLowerCase();
+            if (!className.equals("warrior") && !className.equals("mage") && !className.equals("rogue") && !className.equals("archer")) {
+                player.sendMessage(Component.text("Invalid class. Choose from: warrior, mage, rogue, archer", NamedTextColor.RED));
+                return true;
+            }
+
+            playerCustomization.setPlayerClass(player, className);
+            player.sendMessage(Component.text("You have chosen the " + className + " class!", NamedTextColor.GREEN));
+            return true;
+        }
+        return false;
     }
 
     @Override

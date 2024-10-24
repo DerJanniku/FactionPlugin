@@ -10,14 +10,25 @@ The focus in Phase 1 is on building the foundation of the plugin, including fact
 ### 1.1. Player Customization
 **Objective:** Create a class and cosmetic selection system for players upon their first login.  
 **Key Features:**
-- Class selection (Warrior, Mage, Rogue, Archer).
-- Cosmetic customization (hats, capes) for visual effects only.
-- Persistent player profile storage using YAML/JSON.
+- [x] Class selection (Warrior, Mage, Rogue, Archer).
+- [ ] Cosmetic customization (hats, capes) for visual effects only.
+- [x] Persistent player profile storage using YAML.
 
 **Milestones:**
-- Design a GUI for class and cosmetic selection.
-- Implement class-specific perks (e.g., potion effects, speed boosts).
-- Store player data with unique UUIDs.
+- [ ] Design a GUI for class and cosmetic selection.
+- [ ] Implement class-specific perks (e.g., potion effects, speed boosts).
+- [x] Store player data with unique UUIDs.
+
+**Completed:**
+- Implemented basic class selection system using `/chooseclass` command.
+- Created PlayerCustomization class for managing player data.
+- Updated main plugin file to handle class selection and player join events.
+- Added command to plugin.yml and updated README.md with usage instructions.
+
+**Next Steps:**
+- Implement cosmetic customization feature.
+- Design and implement GUI for class and cosmetic selection.
+- Add class-specific perks and abilities.
 
 ### 1.2. Faction Creation & Management
 **Objective:** Implement the system for players to choose and join factions.  
