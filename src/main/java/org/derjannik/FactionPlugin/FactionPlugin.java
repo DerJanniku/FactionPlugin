@@ -28,6 +28,24 @@ import com.derjanniku.factionplugin.customization.PlayerCustomization;
 import org.derjannik.FactionPlugin.faction.FactionManager;
 
 public class FactionPlugin extends JavaPlugin implements Listener {
+    private CosmeticCustomization cosmeticCustomization;
+
+    @Override
+    public void onEnable() {
+        cosmeticCustomization = new CosmeticCustomization();
+    }
+
+    public void setCosmetic(UUID playerUUID, String cosmetic) {
+        cosmeticCustomization.setCosmetic(playerUUID, cosmetic);
+    }
+
+    public String getCosmetic(UUID playerUUID) {
+        return cosmeticCustomization.getCosmetic(playerUUID);
+    }
+
+    public void removeCosmetic(UUID playerUUID) {
+        cosmeticCustomization.removeCosmetic(playerUUID);
+    }
     // Stores player profiles by UUID, loaded from configuration
     private HashMap<UUID, PlayerProfile> playerProfiles = new HashMap<>();
     private PlayerCustomization playerCustomization;
@@ -66,7 +84,7 @@ private void applyClassPerks(Player player) {
 
         switch (playerClass.toLowerCase()) {
             case "warrior":
-player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1));
+player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, Integer.MAX_VALUE, 1));
                 break;
             case "mage":
                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, Integer.MAX_VALUE, 1));
@@ -75,7 +93,7 @@ player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Intege
                 player.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1));
                 break;
             case "archer":
-                player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 1));
+player.addPotionEffect(new PotionEffect(PotionEffectType.JUMP_BOOST, Integer.MAX_VALUE, 1));
                 break;
         }
     }
@@ -177,7 +195,7 @@ player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Intege
 
     @Override
     public void onDisable() {
-        getLogger().info(Component.text("FactionPlugin is being disabled!", NamedTextColor.RED));
+getLogger().info(Component.text("FactionPlugin is being disabled!", NamedTextColor.RED).toString());
 
         // Save player profiles on server shutdown
         savePlayerProfiles();
@@ -185,7 +203,7 @@ player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Intege
 
     // Initialize default factions
     private void initializeFactions() {
-        getLogger().info(Component.text("Initializing factions...", NamedTextColor.YELLOW));
+getLogger().info(Component.text("Initializing factions...", NamedTextColor.YELLOW).toString());
         // Add faction setup logic here
     }
 

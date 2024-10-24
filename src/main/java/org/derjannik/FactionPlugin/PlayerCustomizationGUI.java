@@ -10,7 +10,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import java.util.UUID;
-import com.derjanniku.factionplugin.customization.PlayerProfile;
+import org.derjannik.FactionPlugin.FactionPlugin.PlayerProfile;
 
 import java.util.Arrays;
 
@@ -36,6 +36,8 @@ public class PlayerCustomizationGUI implements Listener {
         // Add cosmetic selection items
         gui.setItem(20, createMenuItem(Material.LEATHER_HELMET, "Hat"));
         gui.setItem(22, createMenuItem(Material.ELYTRA, "Cape"));
+        gui.setItem(24, createMenuItem(Material.GOLDEN_HELMET, "Golden Hat"));
+        gui.setItem(26, createMenuItem(Material.DIAMOND_CHESTPLATE, "Diamond Cape"));
 
         player.openInventory(gui);
     }
