@@ -98,25 +98,97 @@ Phase 3 introduces resource-based faction progression, armor upgrades, and incen
 ### 3.1. Resource Contribution System
 **Objective:** Allow players to contribute resources to upgrade faction-wide armor and bonuses.  
 **Key Features:**
-- Factions donate resources to a central "forge" (NPC or chest).
-- Once thresholds are met, the entire faction benefits from armor upgrades.
+- Factions can pool resources to unlock upgrades.
+- Upgrades include armor enhancements, potion effects, and special abilities.
+- Resource contributions are tracked and rewarded.
 
 **Milestones:**
-- Track player resource contributions using a leaderboard.
-- Define resource thresholds for upgrades (e.g., 100 iron for chainmail).
-- Distribute armor or bonuses to all faction members upon completion.
+- Design a resource contribution interface.
+- Implement upgrade mechanics and effects.
+- Track and display faction contributions.
 
-### 3.2. Faction Progression & Incentives
-**Objective:** Create a system for faction-wide progression and long-term gameplay incentives.  
+## Phase 4: Advanced Features
+
+### 4.1. Faction Economy System
+**Objective:** Introduce an economy system where factions can earn and spend currency.  
 **Key Features:**
-- Factions level up based on performance in wars and resource collection.
-- Winning wars grants tangible rewards (e.g., control over key resources, temporary buffs).
+- Factions earn currency through activities like mining, killing mobs, and completing quests.
+- Currency can be spent on faction upgrades, special items, and territory expansions.
+- Implement a faction bank where members can deposit and withdraw currency.
 
-**Milestones:**
-- Implement a faction leveling system.
-- Define rewards for winning wars.
-- Create a visible progression system (e.g., faction levels, ranks).
+### 4.2. Faction Quests and Achievements
+**Objective:** Add a quest and achievement system to encourage faction activities.  
+**Key Features:**
+- Daily, weekly, and monthly quests for factions to complete.
+- Achievements for milestones like winning wars, gathering resources, and expanding territory.
+- Rewards for completing quests and achievements, such as currency, items, and buffs.
 
-## Recent Changes
+### 4.3. Faction Alliances and Diplomacy
+**Objective:** Allow factions to form alliances and manage diplomatic relations.  
+**Key Features:**
+- Factions can form alliances with other factions for mutual benefits.
+- Diplomatic actions like trade agreements, non-aggression pacts, and war declarations.
+- A reputation system to track faction relations and influence diplomatic decisions.
 
-- Added Player Customization System classes: Warrior, Mage, Rogue, Archer.
+### 4.4. Custom Faction Events
+**Objective:** Create custom events that factions can participate in for rewards.  
+**Key Features:**
+- Scheduled events like faction battles, resource hunts, and boss fights.
+- Unique rewards for participating and winning events.
+- Event-specific mechanics and rules to keep gameplay fresh and exciting.
+
+### 4.5. Advanced Territory Management
+**Objective:** Enhance the territory system with more management options.  
+**Key Features:**
+- Territory upgrades like fortifications, resource generators, and defensive structures.
+- Dynamic territory borders that can expand or shrink based on faction activities.
+- Territory-specific buffs and debuffs to encourage strategic planning.
+
+### 4.6. Faction Leaderboards and Rankings
+**Objective:** Introduce leaderboards and rankings to foster competition.  
+**Key Features:**
+- Leaderboards for various metrics like wealth, power, territory size, and war victories.
+- Seasonal rankings with rewards for top factions.
+- Publicly visible stats to encourage competition and bragging rights.
+
+### 4.7. Customizable Faction Ranks
+**Objective:** Allow factions to create and manage custom ranks with specific permissions.  
+**Key Features:**
+- Faction leaders can create custom ranks.
+- Assign specific permissions to each rank.
+- Promote and demote members within the faction.
+
+### 4.8. Faction Chat and Communication
+**Objective:** Implement a dedicated chat system for faction members.  
+**Key Features:**
+- Private chat channels for faction members.
+- Integration with Discord for cross-platform communication.
+- Customizable chat prefixes and colors.
+
+### 4.9. Faction Missions and Challenges
+**Objective:** Introduce missions and challenges for factions to complete.  
+**Key Features:**
+- Daily, weekly, and monthly missions.
+- Challenges that require cooperation between faction members.
+- Rewards for completing missions and challenges.
+
+### 4.10. Faction Base Protection
+**Objective:** Enhance base protection mechanisms to prevent griefing.  
+**Key Features:**
+- Anti-griefing measures for faction bases.
+- Customizable protection settings for different areas.
+- Alerts and notifications for attempted breaches.
+
+### 4.11. Faction Resource Sharing
+**Objective:** Implement a system for sharing resources within the faction.  
+**Key Features:**
+- Shared resource storage accessible by faction members.
+- Permissions for accessing and managing shared resources.
+- Tracking and logging of resource contributions and withdrawals.
+
+### 4.12. Faction PvP Arenas
+**Objective:** Create dedicated PvP arenas for faction battles.  
+**Key Features:**
+- Customizable arenas with different themes and layouts.
+- Scheduled PvP events and tournaments.
+- Leaderboards and rewards for top-performing factions.
