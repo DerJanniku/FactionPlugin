@@ -33,11 +33,7 @@ public class PlayerCustomizationGUI implements Listener {
         gui.setItem(14, createMenuItem(Material.BOW, "Archer"));
         gui.setItem(16, createMenuItem(Material.IRON_SWORD, "Rogue"));
 
-        // Add cosmetic selection items
-        gui.setItem(20, createMenuItem(Material.LEATHER_HELMET, "Hat"));
-        gui.setItem(22, createMenuItem(Material.ELYTRA, "Cape"));
-        gui.setItem(24, createMenuItem(Material.GOLDEN_HELMET, "Golden Hat"));
-        gui.setItem(26, createMenuItem(Material.DIAMOND_CHESTPLATE, "Diamond Cape"));
+
 
         player.openInventory(gui);
     }
