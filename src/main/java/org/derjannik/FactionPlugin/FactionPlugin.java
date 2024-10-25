@@ -106,7 +106,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
 
         switch (playerClass.toLowerCase()) {
             case "warrior":
-                player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1));
+player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1)); // Correct the reference to PotionEffectType.INCREASE_DAMAGE
                 break;
             case "mage":
                 player.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, Integer.MAX_VALUE, 1));

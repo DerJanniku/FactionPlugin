@@ -1,6 +1,8 @@
 
 package org.derjannik.FactionPlugin.customization;
 
+import org.derjannik.FactionPlugin.FactionPlugin;
+
 import java.util.HashMap;
 import java.util.UUID;
 
