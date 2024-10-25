@@ -24,6 +24,7 @@ import org.bukkit.potion.PotionEffect;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.logging.Level;
+import org.derjannik.FactionPlugin.PlayerProfile;
 import com.derjanniku.factionplugin.customization.PlayerCustomization;
 import org.derjannik.FactionPlugin.faction.FactionManager;
 
@@ -74,8 +75,22 @@ public class FactionPlugin extends JavaPlugin implements Listener {
         new FactionSelectionGUI(this);
         new PlayerCustomizationGUI(this);
 
-        // Load player profiles from configuration
-        loadPlayerProfiles();
+    // Load player profiles from configuration
+    loadPlayerProfiles();
+
+    private void loadPlayerProfiles() {
+        File profilesDir = new File("plugins/FactionPlugin/profiles");
+        if (!profilesDir.exists()) {
+            profilesDir.mkdirs();
+        }
+        for (File file : profilesDir.listFiles()) {
+            if (file.isFile() && file.getName().endsWith(".yml")) {
+                UUID playerUUID = UUID.fromString(file.getName().replace(".yml", ""));
+                PlayerProfile profile = new PlayerProfile(playerUUID);
+                playerProfiles.put(playerUUID, profile);
+            }
+        }
+    }
     }
 
     public FactionManager getFactionManager() {
