@@ -59,6 +59,7 @@ public class FactionPlugin extends JavaPlugin implements Listener {
     private HashMap<UUID, PlayerProfile> playerProfiles = new HashMap<>();
     private PlayerCustomization playerCustomization;
     private FactionManager factionManager;
+    private DiplomacySystem diplomacySystem;
 
     @Override
     public void onEnable() {
@@ -67,8 +68,11 @@ public class FactionPlugin extends JavaPlugin implements Listener {
         // Initialize PlayerCustomization
         playerCustomization = new PlayerCustomization(this);
 
-        // Initialize FactionManager
-        factionManager = new FactionManager(this);
+        // Initialize DiplomacySystem
+        diplomacySystem = new DiplomacySystem();
+
+        // Initialize FactionManager with DiplomacySystem
+        factionManager = new FactionManager(this, diplomacySystem);
 
         // Register event listeners
         Bukkit.getPluginManager().registerEvents(this, this);

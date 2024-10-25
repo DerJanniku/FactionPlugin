@@ -2,37 +2,34 @@
 package com.factionplugin;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
-import java.util.UUID;
+import java.util.Set;
 
 public class DiplomacySystem {
-    private static final Map<Faction.FactionType, Faction.FactionType> alliances = new HashMap<>();
-    private static final Map<Faction.FactionType, Faction.FactionType> rivals = new HashMap<>();
-    private static final Map<Faction.FactionType, Integer> influence = new HashMap<>();
+    private Map<String, Set<String>> alliances;
+    private Map<String, Set<String>> wars;
 
-    public static void formAlliance(Faction.FactionType faction1, Faction.FactionType faction2) {
-        alliances.put(faction1, faction2);
-        alliances.put(faction2, faction1);
+    public DiplomacySystem() {
+        alliances = new HashMap<>();
+        wars = new HashMap<>();
     }
 
-    public static void declareRivalry(Faction.FactionType faction1, Faction.FactionType faction2) {
-        rivals.put(faction1, faction2);
-        rivals.put(faction2, faction1);
+    public void formAlliance(String faction1, String faction2) {
+        alliances.computeIfAbsent(faction1, k -> new HashSet<>()).add(faction2);
+        alliances.computeIfAbsent(faction2, k -> new HashSet<>()).add(faction1);
     }
 
-    public static void extendInfluence(Faction.FactionType factionType, int amount) {
-        influence.put(factionType, influence.getOrDefault(factionType, 0) + amount);
+    public void declareWar(String faction1, String faction2) {
+        wars.computeIfAbsent(faction1, k -> new HashSet<>()).add(faction2);
+        wars.computeIfAbsent(faction2, k -> new HashSet<>()).add(faction1);
     }
 
-    public static Faction.FactionType getAlliance(Faction.FactionType factionType) {
-        return alliances.get(factionType);
+    public boolean areAllied(String faction1, String faction2) {
+        return alliances.getOrDefault(faction1, new HashSet<>()).contains(faction2);
     }
 
-    public static Faction.FactionType getRival(Faction.FactionType factionType) {
-        return rivals.get(factionType);
-    }
-
-    public static int getInfluence(Faction.FactionType factionType) {
-        return influence.getOrDefault(factionType, 0);
+    public boolean areAtWar(String faction1, String faction2) {
+        return wars.getOrDefault(faction1, new HashSet<>()).contains(faction2);
     }
 }
