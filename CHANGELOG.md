@@ -15,4 +15,6 @@
   - Added `TerritoryDisplay.java` for HUD display of faction territories.
   - Added `RevivalSystem.java` for revival mechanics.
   - Added `ResourceContribution.java` for resource contribution and upgrades.
-  - Added `ScalabilityOptimization.java` for scalability and optimization.
+- Added `ScalabilityOptimization.java` for scalability and optimization.
+- Added `DiplomacySystem.java` for faction diplomacy mechanics.
+- Added `FactionManager.java` to manage faction interactions with the diplomacy system.
