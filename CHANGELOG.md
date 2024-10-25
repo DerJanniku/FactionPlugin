@@ -1,26 +1,18 @@
 
-# Change Log
-
-All notable changes to this project will be documented in this file.
+# Changelog
 
 ## [Unreleased]
-
 ### Added
-- Added new commands and settings to enhance player interaction and competitive elements.
-- Implemented methods to declare war between factions and define war rules.
-
-### Added
-- Basic player customization system.
-- Faction creation and management features.
-- Player Customization System classes: Warrior, Mage, Rogue, Archer.
-- Updated references to `PotionEffectType.INCREASE_DAMAGE` and `PotionEffectType.JUMP` to `PotionEffectType.STRENGTH` and `PotionEffectType.JUMP_BOOST`.
-- Successfully built the plugin and tested it on a Paper 1.21.1 server.
-
-### Changed
-- Updated faction traits for better balance.
-
-### Fixed
-- Resolved issues with territory protection toggling.
-
-## [1.0.0] - YYYY-MM-DD
-- Initial release with core features including player customization, faction management, and war mechanics.
+- Implemented Phase 1: Core Systems Development as per `ROADMAP.md`.
+  - Added `PlayerClasses.java` for player class customization.
+  - Added `Cosmetics.java` for cosmetic customization.
+  - Added `ProfileStorage.java` for profile storage.
+  - Added `PlayerProfile.java` for player profile data.
+  - Added `Faction.java` for faction traits.
+  - Added `FactionLeader.java` for faction leadership mechanics.
+  - Added `WarSystem.java` for war declaration and mechanics.
+  - Added `FactionResources.java` for faction-specific resources.
+  - Added `TerritoryDisplay.java` for HUD display of faction territories.
+  - Added `RevivalSystem.java` for revival mechanics.
+  - Added `ResourceContribution.java` for resource contribution and upgrades.
+  - Added `ScalabilityOptimization.java` for scalability and optimization.
