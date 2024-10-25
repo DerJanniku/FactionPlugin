@@ -16,7 +16,7 @@ The focus in Phase 1 is on building the foundation of the plugin, including fact
 
 **Milestones:**
 - [ ] Design a GUI for class and cosmetic selection.
-- [ ] Implement class-specific perks (e.g., potion effects, speed boosts).
+- [x] Implement class-specific perks (e.g., potion effects, speed boosts).
 - [x] Store player data with unique UUIDs.
 
 **Completed:**
