@@ -1,22 +1,28 @@
+# Contributing to Minecraft Faction Plugin
 
-# Contributing
+Thank you for your interest in contributing to the Minecraft Faction Plugin! We appreciate your help in making this project better. Please follow the guidelines below to ensure a smooth contribution process.
 
-## Summary of Recent Changes
-- Implemented Phase 1: Core Systems Development as per `ROADMAP.md`.
-  - Added `PlayerClasses.java` for player class customization.
-  - Added `Cosmetics.java` for cosmetic customization.
-  - Added `ProfileStorage.java` for profile storage.
-  - Added `PlayerProfile.java` for player profile data.
-  - Added `Faction.java` for faction traits.
-  - Added `FactionLeader.java` for faction leadership mechanics.
-  - Added `WarSystem.java` for war declaration and mechanics.
-  - Added `FactionResources.java` for faction-specific resources.
-  - Added `TerritoryDisplay.java` for HUD display of faction territories.
-  - Added `RevivalSystem.java` for revival mechanics.
-  - Added `ResourceContribution.java` for resource contribution and upgrades.
-- Added `ScalabilityOptimization.java` for scalability and optimization.
-- Added `DiplomacySystem.java` for faction diplomacy mechanics.
-- Added `FactionManager.java` to manage faction interactions with the diplomacy system.
-- Enhanced `DiplomacySystem.java` with trade agreements and peace treaties.
-- Updated `FactionManager.java` to interact with the enhanced diplomacy system.
-- Updated `FactionPlugin.java` to integrate the enhanced diplomacy system.
+## How to Contribute
+
+1. **Report Bugs**: If you find a bug, please open an issue on our GitHub repository. Provide as much detail as possible, including steps to reproduce the issue.
+
+2. **Suggest Features**: We welcome feature requests! If you have an idea for a new feature or improvement, please open an issue to discuss it.
+
+3. **Code Contributions**:
+   - Fork the repository on GitHub.
+   - Create a new branch for your feature or bug fix.
+   - Make your changes and commit them with clear, descriptive messages.
+   - Push your changes to your forked repository.
+   - Open a pull request against the `main` branch of the original repository.
+
+4. **Code Style**: Please follow the existing code style and conventions used in the project. Consistency helps maintain readability.
+
+5. **Testing**: Ensure that your changes are well-tested. If you add new features, consider including unit tests to verify their functionality.
+
+## Code of Conduct
+
+By participating in this project, you agree to abide by our [Code of Conduct](CODE_OF_CONDUCT.md). We expect all contributors to treat each other with respect and kindness.
+
+## Thank You!
+
+Your contributions help make the Minecraft Faction Plugin a better experience for everyone. We look forward to your input!
