@@ -17,3 +17,6 @@
 - Added `ScalabilityOptimization.java` for scalability and optimization.
 - Added `DiplomacySystem.java` for faction diplomacy mechanics.
 - Added `FactionManager.java` to manage faction interactions with the diplomacy system.
+- Enhanced `DiplomacySystem.java` with trade agreements and peace treaties.
+- Updated `FactionManager.java` to interact with the enhanced diplomacy system.
+- Updated `FactionPlugin.java` to integrate the enhanced diplomacy system.
