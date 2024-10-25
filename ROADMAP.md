@@ -11,7 +11,7 @@ The focus in Phase 1 is on building the foundation of the plugin, including fact
 **Objective:** Create a class and cosmetic selection system for players upon their first login.  
 **Key Features:**
 - [x] Class selection (Warrior, Mage, Rogue, Archer).
-- [ ] Cosmetic customization (hats, capes) for visual effects only.
+- [x] Cosmetic customization (hats, capes) for visual effects only.
 - [x] Persistent player profile storage using YAML.
 
 **Milestones:**
