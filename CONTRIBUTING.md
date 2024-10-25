@@ -44,5 +44,7 @@ Thank you for considering contributing to FactionPlugin! Here’s how you can he
 ## Recent Changes
 
 - Added Player Customization System classes: Warrior, Mage, Rogue, Archer.
+- Updated references to `PotionEffectType.INCREASE_DAMAGE` and `PotionEffectType.JUMP` to `PotionEffectType.STRENGTH` and `PotionEffectType.JUMP_BOOST`.
+- Successfully built the plugin and tested it on a Paper 1.21.1 server.
 
 Thank you for your contributions!
