@@ -93,10 +93,13 @@ This document outlines the roadmap for developing the Minecraft plugin with fact
 #### 8.3. Expansion Planning
 - Future expansions could introduce new factions, events, or roles.
 
+## Current Step
+- We are currently in Phase 1, focusing on the core systems development, specifically the player customization system and faction system.
+
 ## Next Steps
-
-- **Faction management and class systems** (class selection, faction traits).
-- **War and building mechanics** (territory protection toggling, war declarations).
-- **Basic revival and contribution systems** (healer role, resource donation and tracking).
-
-This ensures that we have a functional base to build on, allowing us to test performance and balance before expanding into more complex mechanics.
+- Complete the implementation of the player customization system and faction system.
+- Begin work on the faction building rules and war system.
+- Implement the territory display system and revival system.
+- Develop the resource contribution and armor upgrades system.
+- Optimize the plugin for scalability and performance.
+- Plan and implement additional mechanics and future expansions.
