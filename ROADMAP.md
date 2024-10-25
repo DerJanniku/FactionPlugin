@@ -1,118 +1,96 @@
-
 # Project Roadmap
 
-This document outlines the roadmap for developing the Minecraft plugin with faction mechanics, player customization, war systems, and resource management. The project is broken down into phases, starting with essential features and moving toward advanced mechanics and optimizations.
+This roadmap outlines the development of a Minecraft faction plugin, covering foundational mechanics, advanced gameplay features, and future expansions aimed at enhancing player interaction and competitive elements.
+
+---
 
 ## Phase 1: Core Systems Development
 
 ### 1. Player Customization System
-
-#### 1.1. Classes
-- **Warrior:** High health, access to melee buffs like strength potions.
-- **Mage:** Ability to use magic items (enchanted books, firework rockets for ranged attacks).
-- **Rogue:** Faster movement, better stealth, and sneak attack bonuses.
-- **Archer:** Bonuses to ranged weapons like bows and crossbows.
-
-#### 1.2. Cosmetics
-- Purely visual (hats, capes, particle effects) and accessible through achievements or server currency.
-- No gameplay effects to maintain balance.
-
-#### 1.3. Profile Storage
-- Player class and cosmetic choices stored in a YAML or JSON file associated with each player’s UUID.
+- **Classes**: Implement a balanced system of player classes, each with distinct abilities (e.g., Warrior, Mage, Rogue, Archer) tailored to provide unique strengths without creating overpowering roles. 
+- **Cosmetics**: Develop a cosmetic customization system that offers purely visual enhancements (e.g., hats, capes, particle effects), unlockable through achievements or server currency to encourage engagement.
+- **Profile Storage**: Use YAML or JSON to store player choices based on their UUID, making retrieval efficient and profile management easy across different server sessions.
 
 ### 2. Faction System
-
-#### 2.1. Faction Traits
-- **Avalon (Magic-oriented):** Specializes in potion crafting and enchantments.
-- **Thalassia (Water-based):** Benefits from faster movement in water and can breathe longer underwater.
-- **Norwind (Combat-based):** Better melee damage and enhanced durability on armor.
-
-#### 2.2. Faction Leader Mechanic
-- Leadership determined by contribution metrics, not just kills.
-- Leadership rotates weekly or monthly.
+- **Faction Traits**: Define factions with unique traits (e.g., Avalon with magical buffs, Thalassia with water benefits), fostering strategic choice in faction membership.
+- **Faction Leader Mechanic**: Set up dynamic leadership mechanics where the leader is chosen based on contributions, such as resource gathering or PvP performance, and rotate leadership weekly/monthly for fair play.
 
 ### 3. Faction Building Rules & War System
-
-#### 3.1. War Declaration
-- Manual voting-based war declaration system.
-- Wars last a set time period (e.g., 24 or 48 hours).
-
-#### 3.2. War Mechanics
-- Territories become unprotected during war.
-- Wars end when either faction achieves a set objective.
-
-#### 3.3. Building Materials
-- Faction-specific materials for certain strategic builds.
+- **War Declaration**: Allow factions to declare war through a voting system, promoting collaborative decision-making. Set fixed durations (e.g., 24–48 hours) for wars to maintain server stability.
+- **War Mechanics**: Define rules for territory vulnerabilities during war, with objectives such as territory capture or resource depletion.
+- **Building Materials**: Create faction-specific resources needed for strategic builds, adding depth to faction infrastructure and economy.
 
 ### 4. Territory Display System
-
-#### 4.1. HUD Display
-- Displays the current faction territory in the corner using a plugin like Scoreboard or BossBar.
-
-#### 4.2. Real-Time Updates
-- Territory updates instantly as players cross boundaries.
+- **HUD Display**: Display current faction territories using the HUD with plugins like Scoreboard or BossBar.
+- **Real-Time Updates**: Ensure territory information updates as players cross boundaries, enabling seamless gameplay.
 
 ### 5. Revival System
-
-#### 5.1. Who Can Revive?
-- Only specific players (e.g., a “Healer” class) can revive others.
-
-#### 5.2. Revival Conditions
-- Reviving a player costs a resource, such as XP levels or valuable items.
-
-#### 5.3. Timeouts or Penalties
-- If a player isn’t revived within a set time, they respawn at their faction’s base with minor penalties.
+- **Who Can Revive?** Allow only specific roles (e.g., “Healer” class) to revive, adding tactical depth.
+- **Revival Conditions**: Cost revival actions with resources like XP or valuable items to add stakes.
+- **Timeouts or Penalties**: Implement time-limited revivals. Players who aren’t revived return to their base with minor penalties, encouraging team coordination.
 
 ### 6. Resource Contribution & Armor Upgrades
-
-#### 6.1. Resource Thresholds
-- Set resource goals for each faction that progressively unlock upgrades.
-
-#### 6.2. Armor & Other Upgrades
-- Faction-wide upgrades include faster resource gathering, stronger fortifications, or buffs to health regeneration.
-
-#### 6.3. Tracking Contributions
-- Use a leaderboard to track contributions.
+- **Resource Thresholds**: Define progressive goals that factions must meet to unlock upgrades.
+- **Faction-wide Upgrades**: Offer upgrades like faster resource gathering, stronger defenses, or health regeneration boosts.
+- **Tracking Contributions**: Track player contributions via leaderboards, rewarding active players.
 
 ### 7. Scalability & Optimization
+- **Server Size**: Ensure systems are adaptable for both small (20-50 players) and large servers (100+ players).
+- **Simplified Mechanics for Smaller Servers**: Consider PvP-only events for smaller servers, ensuring balanced gameplay.
 
-#### 7.1. Server Size
-- System works for both small (20-50 players) and large (100+ players) servers.
+---
 
-#### 7.2. Simplified Version for Small Servers
-- Remove certain mechanics or focus on PvP events rather than full-scale territory battles.
+## Phase 2: Advanced Mechanics and Enhanced Player Interaction
 
-### 8. Additional Mechanics & Future Expansions
+### 8. Enhanced Diplomacy & Territory Control
+- **Alliances & Rivals**: Develop an alliance and rival system where factions can team up or compete, sharing resources or coordinating attacks.
+- **Influence System**: Let factions extend influence over neutral territories, controlling resource nodes or strategic locations.
+- **Faction Laws & Governance**: Introduce customizable faction laws, such as PvP restrictions or resource quotas, to maintain internal control.
 
-#### 8.1. Faction Progression
-- Factions progress over time based on performance in wars and resource collection.
+### 9. Dynamic War & PvP Events
+- **War Seasons & Objectives**: Define war seasons with specific goals (e.g., resource capture or territory control). Rewards for these seasonal goals encourage long-term engagement.
+- **PvP Zone Events**: Randomly spawn PvP zones that offer exclusive loot or XP for the faction that holds it. This feature adds real-time strategy for faction PvP.
 
-#### 8.2. Incentives for War
-- Winning wars grants tangible rewards, such as control over key resources.
+### 10. Resource & Economy Enhancements
+- **Faction Economy**: Design a resource-driven economy where factions manage taxes and trade zones. Incorporate faction-specific resources to foster an inter-faction economy.
+- **Faction-Specific Resources**: Create unique resources for each faction, which can only be gathered in their territories, encouraging faction specialization and trade between factions.
 
-#### 8.3. Expansion Planning
-- Future expansions could introduce new factions, events, or roles.
+### 11. Player Rank & Reward System
+- **Custom Ranks & Permissions**: Develop customizable ranks within factions, with permissions suited to roles like “Builder,” “Warrior,” or “Diplomat.”
+- **Rewards for Contributions**: Establish a leaderboard for contributions, with rewards like exclusive cosmetics or upgraded gear for top contributors.
+
+---
+
+## Phase 3: Faction Progression and Legacy Mechanics
+
+### 12. Faction Expansion & Legacy
+- **Faction Relics & Artifacts**: Create collectible faction relics or artifacts, offering special abilities (e.g., faster healing or bonus combat strength) to factions that capture them.
+- **Faction Legacy System**: Allow factions to “level up” over time through war victories or resource collection, unlocking unique faction-wide perks such as enhanced gathering speed or damage boosts.
+
+### 13. New Content & Event System
+- **Special Events**: Introduce events like faction raids, treasure hunts, or PvE boss battles, open to factions who meet certain requirements.
+- **Seasonal Faction Quests**: Create seasonal quests that add goals like defeating powerful mobs or gathering rare items, with faction-wide rewards for completion.
+- **Expanding the Faction Roster**: Over time, add new factions with unique traits to keep the gameplay experience fresh and competitive.
+
+### 14. Player Housing and Base Customization
+- **Personal Bases**: Allow players to have individual bases within their faction’s territory, customizable with unique decorative elements.
+- **Faction Headquarters**: Develop faction HQs with special functionalities (e.g., warp points, crafting stations), encouraging faction pride and cooperation in creating a central stronghold.
+
+### 15. Cross-Server Compatibility and Data Syncing
+- **Cross-Server Functionality**: Enable cross-server faction mechanics so that factions can have a presence on multiple servers.
+- **Data Syncing**: Ensure that player progress and faction status can transfer seamlessly between servers, allowing for a consistent experience.
+
+---
 
 ## Current Step
-- We are currently in Phase 1, focusing on the core systems development, specifically the player customization system and faction system.
+We are in **Phase 1**, focusing on the core systems, specifically player customization and the foundational faction system.
+
+---
 
 ## Next Steps
-- Complete the implementation of the player customization system and faction system.
-  - Implement class selection and cosmetic customization.
-  - Store player profiles in YAML or JSON files.
-  - Develop faction traits and leader mechanics.
-- Begin work on the faction building rules and war system.
-  - Implement manual voting-based war declaration.
-  - Develop war mechanics and faction-specific building materials.
-- Implement the territory display system and revival system.
-  - Create a HUD display for faction territories.
-  - Develop revival mechanics and conditions.
-- Develop the resource contribution and armor upgrades system.
-  - Set resource thresholds and track contributions.
-  - Implement faction-wide upgrades.
-- Optimize the plugin for scalability and performance.
-  - Ensure the system works for both small and large servers.
-  - Simplify mechanics for smaller servers if necessary.
-- Plan and implement additional mechanics and future expansions.
-  - Develop faction progression and incentives for war.
-  - Plan future expansions with new factions, events, or roles.
+1. **Complete Phase 1**: Finalize player customization, faction traits, and basic war mechanics.
+2. **Begin Phase 2**: Develop advanced mechanics, including diplomacy, economy, and player-driven ranking systems.
+3. **Plan Phase 3**: Focus on faction progression, content expansions, and cross-server compatibility.
+4. **Iterative Testing**: Conduct rigorous testing at the end of each phase to ensure balance, optimization, and server stability.
+
+This roadmap provides clear guidance for each phase and ensures we’re developing in a way that meets player interests and supports server growth. Let me know if any details need refinement!
