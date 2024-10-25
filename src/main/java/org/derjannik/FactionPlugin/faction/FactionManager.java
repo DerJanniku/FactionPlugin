@@ -85,7 +85,7 @@ public class FactionManager {
     private void applyFactionTrait(Player player, String trait) {
         switch (trait) {
             case "magic":
-player.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, Integer.MAX_VALUE, 1)); // Correct the reference if needed
+player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, Integer.MAX_VALUE, 1)); // Correct the reference if needed
                 break;
             case "water":
                 player.addPotionEffect(new PotionEffect(PotionEffectType.WATER_BREATHING, Integer.MAX_VALUE, 1));
