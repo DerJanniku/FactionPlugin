@@ -15,6 +15,7 @@ The focus in Phase 1 is on building the foundation of the plugin, including fact
 - [x] Persistent player profile storage using YAML.
 
 **Milestones:**
+- [x] Created PlayerProfile class for managing player data.
 - [ ] Design a GUI for class and cosmetic selection.
 - [x] Implement class-specific perks (e.g., potion effects, speed boosts).
 - [x] Store player data with unique UUIDs.
