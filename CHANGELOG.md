@@ -1,23 +1,52 @@
+# Changelog for Minecraft Faction Plugin
 
-# Changelog
+All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
+
 ### Added
-- Implemented Phase 1: Core Systems Development as per `ROADMAP.md`.
-  - Added `PlayerClasses.java` for player class customization.
-  - Added `Cosmetics.java` for cosmetic customization.
-  - Added `ProfileStorage.java` for profile storage.
-  - Added `PlayerProfile.java` for player profile data.
-  - Added `Faction.java` for faction traits.
-  - Added `FactionLeader.java` for faction leadership mechanics.
-  - Added `WarSystem.java` for war declaration and mechanics.
-  - Added `FactionResources.java` for faction-specific resources.
-  - Added `TerritoryDisplay.java` for HUD display of faction territories.
-  - Added `RevivalSystem.java` for revival mechanics.
-  - Added `ResourceContribution.java` for resource contribution and upgrades.
-- Added `ScalabilityOptimization.java` for scalability and optimization.
-- Added `DiplomacySystem.java` for faction diplomacy mechanics.
-- Added `FactionManager.java` to manage faction interactions with the diplomacy system.
-- Enhanced `DiplomacySystem.java` with trade agreements and peace treaties.
-- Updated `FactionManager.java` to interact with the enhanced diplomacy system.
-- Updated `FactionPlugin.java` to integrate the enhanced diplomacy system.
+- Initial release of the Minecraft Faction Plugin with core features.
+
+## [1.0.0] - YYYY-MM-DD
+### Added
+- Player customization system with classes and cosmetics.
+- Faction creation and management system.
+- War declaration and mechanics.
+- Revival system with tactical depth.
+- Territory display system using HUD.
+- Resource contribution and armor upgrades.
+
+### Changed
+- Improved performance and scalability for larger servers.
+
+### Fixed
+- Resolved issues with faction leader mechanics.
+- Fixed bugs related to territory display updates.
+
+## [1.1.0] - YYYY-MM-DD
+### Added
+- Enhanced diplomacy features including alliances and rivalries.
+- Dynamic war and PvP events with seasonal objectives.
+- Faction economy management with taxes and trade zones.
+
+### Changed
+- Updated player rank and reward system for better engagement.
+
+### Fixed
+- Various bug fixes and performance improvements.
+
+## [1.2.0] - YYYY-MM-DD
+### Added
+- Faction expansion and legacy mechanics.
+- Player housing and base customization options.
+- Cross-server compatibility and data syncing features.
+
+### Changed
+- Refined user interface for faction management commands.
+
+### Fixed
+- Addressed issues with resource tracking and contribution calculations.
+
+---
+
+For a complete list of changes, please refer to the individual release notes.
