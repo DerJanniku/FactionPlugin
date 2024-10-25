@@ -98,8 +98,21 @@ This document outlines the roadmap for developing the Minecraft plugin with fact
 
 ## Next Steps
 - Complete the implementation of the player customization system and faction system.
+  - Implement class selection and cosmetic customization.
+  - Store player profiles in YAML or JSON files.
+  - Develop faction traits and leader mechanics.
 - Begin work on the faction building rules and war system.
+  - Implement manual voting-based war declaration.
+  - Develop war mechanics and faction-specific building materials.
 - Implement the territory display system and revival system.
+  - Create a HUD display for faction territories.
+  - Develop revival mechanics and conditions.
 - Develop the resource contribution and armor upgrades system.
+  - Set resource thresholds and track contributions.
+  - Implement faction-wide upgrades.
 - Optimize the plugin for scalability and performance.
+  - Ensure the system works for both small and large servers.
+  - Simplify mechanics for smaller servers if necessary.
 - Plan and implement additional mechanics and future expansions.
+  - Develop faction progression and incentives for war.
+  - Plan future expansions with new factions, events, or roles.
