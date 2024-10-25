@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
 
 ### Added
 - Added new commands and settings to enhance player interaction and competitive elements.
+- Implemented methods to declare war between factions and define war rules.
 
 ### Added
 - Basic player customization system.

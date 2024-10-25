@@ -96,3 +96,4 @@ We are in **Phase 1**, focusing on the core systems, specifically player customi
 ## Recent Updates
 - Added new commands and settings to enhance player interaction and competitive elements.
 - Updated README.md and CHANGELOG.md to reflect the new changes.
+- Implemented methods to declare war between factions and define war rules.

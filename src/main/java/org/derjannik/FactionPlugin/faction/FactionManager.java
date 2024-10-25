@@ -96,6 +96,26 @@ player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, Integer.MAX_V
         }
     }
 
+    public void declareWar(String factionName1, String factionName2) {
+        Faction faction1 = factions.get(factionName1);
+        Faction faction2 = factions.get(factionName2);
+        if (faction1 != null && faction2 != null) {
+            faction1.setWarWith(factionName2);
+            faction2.setWarWith(factionName1);
+            saveFaction(faction1);
+            saveFaction(faction2);
+            System.out.println(factionName1 + " has declared war on " + factionName2);
+        } else {
+            System.out.println("One or both factions not found!");
+        }
+    }
+
+    public void defineWarRules() {
+        // Define rules for territory vulnerabilities during war
+        // Example: Territory capture or resource depletion
+        System.out.println("War rules defined: Territory capture or resource depletion.");
+    }
+
     public void leaveFaction(Player player) {
         Faction faction = getPlayerFaction(player);
         if (faction != null) {
@@ -168,10 +188,20 @@ player.addPotionEffect(new PotionEffect(PotionEffectType.STRENGTH, Integer.MAX_V
         private final String trait;
         private final Map<UUID, Integer> members;
 
+        private String warWith;
+
         public Faction(String name, String trait) {
             this.name = name;
             this.trait = trait;
             this.members = new HashMap<>();
+        }
+
+        public void setWarWith(String factionName) {
+            this.warWith = factionName;
+        }
+
+        public String getWarWith() {
+            return warWith;
         }
 
         public String getName() {
