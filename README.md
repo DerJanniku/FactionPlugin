@@ -91,6 +91,7 @@ Use the GUI to select your class and cosmetics (hats, capes, golden hats, diamon
 ## Recent Updates
 - Updated references to `PotionEffectType.INCREASE_DAMAGE` and `PotionEffectType.JUMP` to `PotionEffectType.STRENGTH` and `PotionEffectType.JUMP_BOOST` respectively.
 - Successfully built the plugin and tested it on a Paper 1.21.1 server.
+- Added new commands and settings to enhance player interaction and competitive elements.
 
 ## Contributing
 

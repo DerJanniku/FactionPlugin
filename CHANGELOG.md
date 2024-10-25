@@ -6,6 +6,9 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- Added new commands and settings to enhance player interaction and competitive elements.
+
+### Added
 - Basic player customization system.
 - Faction creation and management features.
 - Player Customization System classes: Warrior, Mage, Rogue, Archer.

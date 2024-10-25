@@ -93,4 +93,6 @@ We are in **Phase 1**, focusing on the core systems, specifically player customi
 3. **Plan Phase 3**: Focus on faction progression, content expansions, and cross-server compatibility.
 4. **Iterative Testing**: Conduct rigorous testing at the end of each phase to ensure balance, optimization, and server stability.
 
-This roadmap provides clear guidance for each phase and ensures we’re developing in a way that meets player interests and supports server growth. Let me know if any details need refinement!
+## Recent Updates
+- Added new commands and settings to enhance player interaction and competitive elements.
+- Updated README.md and CHANGELOG.md to reflect the new changes.
