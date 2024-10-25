@@ -88,6 +88,10 @@ Use the GUI to select your class and cosmetics (hats, capes, golden hats, diamon
 6. Interact with other players and contribute to your faction's growth.
 7. If you want to change factions, use `/leavefaction` before joining a new one.
 
+## Recent Updates
+- Updated references to `PotionEffectType.INCREASE_DAMAGE` and `PotionEffectType.JUMP` to `PotionEffectType.STRENGTH` and `PotionEffectType.JUMP_BOOST` respectively.
+- Successfully built the plugin and tested it on a Paper 1.21.1 server.
+
 ## Contributing
 
 Contributions are welcome! Please fork the repository and submit a pull request with your changes.
