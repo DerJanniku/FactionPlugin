@@ -96,6 +96,22 @@ public class FactionPlugin extends JavaPlugin implements Listener {
             }
         }
     }
+    public void formTradeAgreement(String faction1, String faction2) {
+        diplomacySystem.formTradeAgreement(faction1, faction2);
+    }
+
+    public void formPeaceTreaty(String faction1, String faction2) {
+        diplomacySystem.formPeaceTreaty(faction1, faction2);
+    }
+
+    public boolean hasTradeAgreement(String faction1, String faction2) {
+        return diplomacySystem.hasTradeAgreement(faction1, faction2);
+    }
+
+    public boolean hasPeaceTreaty(String faction1, String faction2) {
+        return diplomacySystem.hasPeaceTreaty(faction1, faction2);
+    }
+
     public FactionManager getFactionManager() {
         return factionManager;
     }

@@ -31,6 +31,22 @@ public class FactionManager {
         enemies.add(otherFaction);
     }
 
+    public void formTradeAgreement(String otherFaction) {
+        diplomacySystem.formTradeAgreement(this.name, otherFaction);
+    }
+
+    public void formPeaceTreaty(String otherFaction) {
+        diplomacySystem.formPeaceTreaty(this.name, otherFaction);
+    }
+
+    public boolean hasTradeAgreementWith(String otherFaction) {
+        return diplomacySystem.hasTradeAgreement(this.name, otherFaction);
+    }
+
+    public boolean hasPeaceTreatyWith(String otherFaction) {
+        return diplomacySystem.hasPeaceTreaty(this.name, otherFaction);
+    }
+
     public boolean isAlliedWith(String otherFaction) {
         return diplomacySystem.areAllied(this.name, otherFaction);
     }
