@@ -25,7 +25,7 @@ import java.util.List;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import org.derjannik.FactionPlugin.PlayerProfile;
-import com.derjanniku.factionplugin.customization.PlayerCustomization;
+import org.derjannik.FactionPlugin.customization.PlayerCustomization;
 import org.derjannik.FactionPlugin.faction.FactionManager;
 
 public class FactionPlugin extends JavaPlugin implements Listener {
@@ -75,8 +75,9 @@ public class FactionPlugin extends JavaPlugin implements Listener {
         new FactionSelectionGUI(this);
         new PlayerCustomizationGUI(this);
 
-    // Load player profiles from configuration
-    loadPlayerProfiles();
+        // Load player profiles from configuration
+        loadPlayerProfiles();
+    }
 
     private void loadPlayerProfiles() {
         File profilesDir = new File("plugins/FactionPlugin/profiles");
@@ -91,8 +92,6 @@ public class FactionPlugin extends JavaPlugin implements Listener {
             }
         }
     }
-    }
-
     public FactionManager getFactionManager() {
         return factionManager;
     }

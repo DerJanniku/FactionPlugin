@@ -10,7 +10,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import java.util.UUID;
-import org.derjannik.FactionPlugin.FactionPlugin.PlayerProfile;
+import org.derjannik.FactionPlugin.PlayerProfile;
 
 import java.util.Arrays;
 
