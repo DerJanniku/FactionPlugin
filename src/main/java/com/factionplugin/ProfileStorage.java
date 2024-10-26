@@ -35,7 +35,8 @@ public class ProfileStorage {
             return null;
         }
 
-        Yaml yaml = new Yaml(new Constructor(PlayerProfile.class));
+        // FIXME: Resolve the issue with incompatible types for Yaml constructor
+        Yaml yaml = new Yaml(new Constructor(PlayerProfile.class), new Representer());
         return yaml.load(Files.newInputStream(file.toPath()));
     }
 }
